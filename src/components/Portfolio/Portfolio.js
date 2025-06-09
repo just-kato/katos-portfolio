@@ -4,7 +4,7 @@ import { Box, Image, VStack, Text } from '@chakra-ui/react';
 import portfolio from '../../assets/portfolio.png';
 import PortfolioWindow from './PortfolioWindow'; // Import the new component
 
-const Portfolio = ({ zIndex, bringToFront, isMenuButton }) => {
+const Portfolio = ({ zIndex, bringToFront }) => {
   const [isPortfolioWindowOpen, setIsPortfolioWindowOpen] = useState(false);
   const [isWebsitesWindowOpen, setIsWebsitesWindowOpen] = useState(false);
   const [isResumeWindowOpen, setIsResumeWindowOpen] = useState(false);
@@ -58,7 +58,6 @@ const Portfolio = ({ zIndex, bringToFront, isMenuButton }) => {
 };
 
 Portfolio.propTypes = {
-  isMenuButton: PropTypes.bool.isRequired,
   zIndex: PropTypes.number.isRequired,
   bringToFront: PropTypes.func.isRequired,
 };
