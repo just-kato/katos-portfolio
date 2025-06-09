@@ -32,7 +32,7 @@ const Menu = ({ isOpen, onClose, onMenuItemClick }) => {
       bg="gray.50"
       boxShadow="lg"
       width="250px"
-      height="300px"
+      height="250px"
       borderRadius="sm"
       display="flex"
       zIndex="9999"
@@ -82,7 +82,7 @@ const Menu = ({ isOpen, onClose, onMenuItemClick }) => {
 };
 Menu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
   onMenuItemClick: PropTypes.func.isRequired,
 };
 
