@@ -6,7 +6,6 @@ export const menuItems = [
   { icon: FaPencilAlt, label: 'SERVICES' },
   { icon: FaEnvelope, label: 'CONTACT' },
   { icon: FaGamepad, label: 'SNAKEY' },
-  { icon: FaGlasses, label: 'ABOUT' },
   {
     icon: GrPowerShutdown,
     label: 'SHUT DOWN',
