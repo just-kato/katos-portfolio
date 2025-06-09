@@ -46,7 +46,6 @@ const WindowBox = ({ title, content, onClose, zIndex, bringToFront, backgroundCo
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              console.log("Close button clicked");
               onClose();
             }}
             aria-label="Close window"
