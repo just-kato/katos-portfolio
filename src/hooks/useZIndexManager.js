@@ -10,10 +10,17 @@ const useZIndexManager = () => {
     about: 5,
   });
 
+  const [isWindowOpen, setIsWindowOpen] = useState({
+    portfolio: false,
+    services: false,
+    contact: false,
+    snakey: false,
+    about: false,
+  });
+
   const bringToFront = (windowName) => {
     setTopZIndex((prevZIndex) => prevZIndex + 1);
     setWindowZIndexes((prev) => {
-      console.log(`Bringing ${windowName} to front with zIndex: ${topZIndex + 1}`);
       return {
         ...prev,
         [windowName]: topZIndex + 1,
@@ -21,8 +28,14 @@ const useZIndexManager = () => {
     });
   };
 
+  const toggleWindow = (windowName) => {
+    setIsWindowOpen(prev => ({
+      ...prev,
+      [windowName]: !prev[windowName],
+    }));
+  };
 
-  return { windowZIndexes, bringToFront };
+  return { windowZIndexes, bringToFront, isWindowOpen, toggleWindow };
 };
 
 export default useZIndexManager;
