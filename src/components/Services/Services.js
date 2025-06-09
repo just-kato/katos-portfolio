@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Image, Text, VStack } from '@chakra-ui/react';
 import "@lottiefiles/lottie-player";
-import support from '../../assets/support.png';
 import ServicesWindow from './ServicesWindow';
+import kato from '../../assets/kato.png';
 
 const Services = ({ zIndex, bringToFront }) => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
@@ -27,8 +27,8 @@ const Services = ({ zIndex, bringToFront }) => {
         onClick={toggleWindow}
       >
         <VStack spacing={1}>
-          <Image src={support} boxSize={20} alt="Services" />
-          <Text>SERVICES</Text>
+          <Image src={kato} boxSize={20} alt="Services" />
+          <Text>ABOUT ME</Text>
         </VStack>
       </Box>
 <ServicesWindow toggleWindow={toggleWindow} isWindowOpen={isWindowOpen} bringToFront={bringToFront} zIndex={zIndex}/>
