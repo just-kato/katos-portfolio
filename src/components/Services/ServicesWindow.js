@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, Text, VStack, Flex, useBreakpointValue } from '@chakra-ui/react';
+import { Image, Text, VStack, Flex, Box, useBreakpointValue } from '@chakra-ui/react';
 import "@lottiefiles/lottie-player";
 import services from '../../assets/services.png';
-import servicesData from './constants';
+import aboutMeData from './constants';
 import WindowBox from '../WindowBox/WindowBox';
+import kato from '../../assets/kato.png';
 
 const ServicesWindow = ({isWindowOpen, toggleWindow, zIndex, bringToFront }) => {
   const windowSize = useBreakpointValue({
@@ -22,9 +23,10 @@ const ServicesWindow = ({isWindowOpen, toggleWindow, zIndex, bringToFront }) => 
         backgroundColor="white"
         content={
           <VStack spacing={3} backgroundColor="white" p={3}>
-            <Image src={services} boxSize={20} alt="Services" />
-
-            {servicesData.map((service, index) => (
+<Box backgroundColor="pink" borderRadius='full'>
+              <Image src={kato} boxSize={40} alt="About"  borderRadius='full'/>
+              </Box>
+            {aboutMeData.map((service, index) => (
               <Flex key={index} textAlign="left" flexDirection="column" gap={2}>
                 <Text fontWeight="bold">- {service.title}:</Text>
                 <Text fontSize={{base: "xs",lg:"md"}}>{service.description}</Text>
