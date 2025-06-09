@@ -7,7 +7,7 @@ import SnakeGame from '../SnakeGame/SnakeGame';
 import useZindexManager from '../../hooks/useZIndexManager';
 
 const IconButtons = () => {
-  const { windowZIndexes, bringToFront } = useZindexManager();
+  const { windowZIndexes, bringToFront, isWindowOpen, toggleWindow } = useZindexManager();
 
 
   return (
@@ -30,6 +30,8 @@ const IconButtons = () => {
       <Contact
         zIndex={windowZIndexes.contact}
         bringToFront={() => bringToFront('contact')}
+        isWindowOpen={isWindowOpen.contact}
+        toggleWindow={() => toggleWindow('contact')}
       />
       <SnakeGame
         zIndex={windowZIndexes.snakey}
