@@ -10,7 +10,6 @@ const SnakeWindow =({isWindowOpen, toggleWindow, zIndex, bringToFront}) =>{
     md: { width: "700px", height: "700px" },
     lg: { width: "900px", height: "700px" },
   });
-  console.log(zIndex, 'zIndex')
   return(
 <>
 {isWindowOpen && (
