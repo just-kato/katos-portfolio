@@ -26,7 +26,6 @@ const ContactForm = () => {
       })
       .catch((err) => {
         alert('Failed to send message. Please try again.');
-        console.log('FAILED...', err);
       });
   };
 
