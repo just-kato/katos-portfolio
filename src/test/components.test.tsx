@@ -488,8 +488,8 @@ describe('ContactForm', () => {
   it('updates field values on change', () => {
     render(<ContactForm />);
     const input = screen.getByPlaceholderText('Jane Doe') as HTMLInputElement;
-    fireEvent.change(input, { target: { name: 'name', value: 'Kato' } });
-    expect(input.value).toBe('Kato');
+    fireEvent.change(input, { target: { name: 'name', value: 'Alexzandra' } });
+    expect(input.value).toBe('Alexzandra');
   });
 
   it('shows sent confirmation after successful fetch', async () => {
