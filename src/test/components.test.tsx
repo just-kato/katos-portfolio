@@ -124,14 +124,29 @@ import { HeroPitch } from '../components/Hero/HeroPitch';
 import { Hero } from '../components/Hero/Hero';
 
 describe('HeroPortrait', () => {
-  it('renders AVAILABLE badge', () => {
+  it('renders AVAILABLE badge as pill with green dot', () => {
     render(<HeroPortrait />);
     expect(screen.getByText('AVAILABLE')).toBeInTheDocument();
   });
 
-  it("renders GSU '29 badge", () => {
+  it("renders GSU '29 speech bubble badge", () => {
     render(<HeroPortrait />);
     expect(screen.getByText(/GSU/)).toBeInTheDocument();
+  });
+
+  it('renders 10+ yrs with clients badge', () => {
+    render(<HeroPortrait />);
+    expect(screen.getByText(/10\+ yrs/)).toBeInTheDocument();
+  });
+
+  it('renders Atlanta, GA badge', () => {
+    render(<HeroPortrait />);
+    expect(screen.getByText('Atlanta, GA')).toBeInTheDocument();
+  });
+
+  it('renders building icon badge', () => {
+    const { container } = render(<HeroPortrait />);
+    expect(container.querySelector('.badge-pop[style*="mint"]')).toBeDefined();
   });
 
   it('renders the portrait image', () => {

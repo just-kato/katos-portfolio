@@ -113,6 +113,39 @@
     .clients-underline { animation: none; stroke-dashoffset: 0; }
   }
 
+  /* Hero portrait floating badge pop-in
+     Uses standalone `scale` property (CSS Transforms L2) so it doesn't
+     collide with inline transform: rotate() / translateY() on the same element */
+  @keyframes badge-pop {
+    from { opacity: 0; scale: 0.8; }
+    to   { opacity: 1; scale: 1; }
+  }
+  .badge-pop {
+    animation: badge-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .badge-pop { animation: none !important; }
+  }
+
+  /* Speech bubble tail for GSU '29 — points upward from top-left of badge */
+  .badge-speech-bubble { position: relative; }
+  .badge-speech-bubble::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 12px;
+    border: 7px solid transparent;
+    border-bottom: 10px solid #161310;
+  }
+  .badge-speech-bubble::after {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: 13.5px;
+    border: 5.5px solid transparent;
+    border-bottom: 8px solid #A7C5EB;
+  }
+
   /* ── Focus rings ── */
   .form-input:focus {
     outline: none;
