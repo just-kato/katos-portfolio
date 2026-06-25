@@ -29,7 +29,6 @@ export const PROJECTS: Project[] = [
       'Educational hub for Controller FX, a Forex trading brand. Learning materials, "Forex Playbook" strategy guides, and links to live trading streams.',
     image: controllerfxImg,
     imageBg: T.ink,
-    href: 'https://controllerfx.com',
     imagePosition: 'top',
   },
   {
