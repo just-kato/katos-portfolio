@@ -18,7 +18,8 @@
   </head>
   <body>
     <!-- Netlify Forms: static form for build-time detection in this SPA -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
       <input name="bot-field" />
       <input name="name" />
       <input name="email" />
