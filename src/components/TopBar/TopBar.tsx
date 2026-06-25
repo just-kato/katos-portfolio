@@ -56,7 +56,7 @@ export function TopBar() {
             </a>
           ))}
           <a
-            href="resume.pdf"
+            href="alexzandra_hernandez_resume.pdf"
             download
             className="btn-resume"
             style={{

@@ -2,7 +2,7 @@ import { T } from '../../tokens';
 
 export function HeroPitch() {
   return (
-    <div style={{ flex: '1 1 420px', minWidth: 0 }}>
+    <div style={{ flex: '1 1 420px', minWidth: 0, paddingTop: 'clamp(34px, 4.5vw, 54px)' }}>
       <div
         style={{
           fontFamily: "'Space Mono', monospace",
@@ -18,35 +18,15 @@ export function HeroPitch() {
 
       <h1
         style={{
-          fontWeight: 900,
-          fontSize: 'clamp(40px,7vw,84px)',
-          lineHeight: 0.85,
-          letterSpacing: -3,
-        }}
-      >
-        <span style={{ display: 'block', color: T.ink }}>Alexzandra</span>
-        <span
-          style={{
-            display: 'block',
-            color: 'transparent',
-            WebkitTextStroke: `2.5px ${T.ink}`,
-          }}
-        >
-          Hernandez
-        </span>
-      </h1>
-
-      <p
-        style={{
-          marginTop: 'clamp(22px,2.8vw,30px)',
           fontWeight: 800,
-          fontSize: 'clamp(20px,2.8vw,30px)',
-          lineHeight: 1.1,
-          letterSpacing: -0.8,
+          fontSize: 'clamp(28px, 4vw, 48px)',
+          lineHeight: 1.05,
+          letterSpacing: -1,
           maxWidth: 520,
+          margin: 0,
         }}
       >
-        Put me in front of your{' '}
+        Put me in front of your<br />
         <span style={{ position: 'relative', display: 'inline-block', zIndex: 0 }}>
           <svg
             aria-hidden="true"
@@ -63,7 +43,6 @@ export function HeroPitch() {
               zIndex: -1,
             }}
           >
-            {/* Organic highlight: thick semi-transparent stroke with slight hand-drawn waviness */}
             <path
               d="M 2,12 C 18,9 34,14 52,11 C 69,13 83,9 98,12"
               fill="none"
@@ -72,7 +51,6 @@ export function HeroPitch() {
               strokeLinecap="round"
               className="clients-highlight"
             />
-            {/* Underline: thin marker stroke just below text baseline */}
             <path
               d="M 1,23 C 22,21 48,24 72,22 C 85,23 93,21 99,22"
               fill="none"
@@ -85,12 +63,12 @@ export function HeroPitch() {
           clients
         </span>
         .
-      </p>
+      </h1>
 
       <p
         style={{
-          marginTop: 'clamp(18px,2.2vw,24px)',
-          fontSize: 'clamp(14.5px,1.4vw,16.5px)',
+          marginTop: 'clamp(18px, 2.2vw, 24px)',
+          fontSize: 'clamp(15px, 1.5vw, 18px)',
           lineHeight: 1.62,
           maxWidth: 500,
           color: T.body,
@@ -103,7 +81,7 @@ export function HeroPitch() {
 
       <div
         style={{
-          marginTop: 'clamp(24px,3vw,32px)',
+          marginTop: 'clamp(24px, 3vw, 32px)',
           display: 'flex',
           flexWrap: 'wrap',
           gap: 14,
@@ -128,7 +106,7 @@ export function HeroPitch() {
           Get in touch →
         </a>
         <a
-          href="resume.pdf"
+          href="alexzandra_hernandez_resume.pdf"
           download
           className="cta-cream"
           style={{

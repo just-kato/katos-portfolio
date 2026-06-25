@@ -107,7 +107,7 @@ describe('TopBar', () => {
   it('renders résumé download button', () => {
     render(<TopBar />);
     const link = screen.getByText('RÉSUMÉ ↓');
-    expect(link).toHaveAttribute('href', 'resume.pdf');
+    expect(link).toHaveAttribute('href', 'alexzandra_hernandez_resume.pdf');
     expect(link).toHaveAttribute('download');
   });
 
@@ -124,29 +124,25 @@ import { HeroPitch } from '../components/Hero/HeroPitch';
 import { Hero } from '../components/Hero/Hero';
 
 describe('HeroPortrait', () => {
-  it('renders AVAILABLE badge as pill with green dot', () => {
-    render(<HeroPortrait />);
-    expect(screen.getByText('AVAILABLE')).toBeInTheDocument();
+  it('renders AVAILABLE spinning stamp', () => {
+    const { container } = render(<HeroPortrait />);
+    expect(container.querySelector('.stamp-spin')).toBeInTheDocument();
+    expect(container.textContent).toContain('AVAILABLE');
   });
 
-  it("renders GSU '29 speech bubble badge", () => {
+  it("renders GSU '29 pill badge", () => {
     render(<HeroPortrait />);
     expect(screen.getByText(/GSU/)).toBeInTheDocument();
   });
 
-  it('renders 10+ yrs with clients badge', () => {
+  it('renders Alexzandra name pill', () => {
     render(<HeroPortrait />);
-    expect(screen.getByText(/10\+ yrs/)).toBeInTheDocument();
+    expect(screen.getByText('Alexzandra')).toBeInTheDocument();
   });
 
   it('renders Atlanta, GA badge', () => {
     render(<HeroPortrait />);
     expect(screen.getByText('Atlanta, GA')).toBeInTheDocument();
-  });
-
-  it('renders building icon badge', () => {
-    const { container } = render(<HeroPortrait />);
-    expect(container.querySelector('.badge-pop[style*="mint"]')).toBeDefined();
   });
 
   it('renders the portrait image', () => {
@@ -156,10 +152,9 @@ describe('HeroPortrait', () => {
 });
 
 describe('HeroPitch', () => {
-  it('renders both name lines', () => {
+  it('renders h1 headline', () => {
     render(<HeroPitch />);
-    expect(screen.getByText('Alexzandra')).toBeInTheDocument();
-    expect(screen.getByText('Hernandez')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/Put me in front/);
   });
 
   it('renders SVG highlight behind "clients"', () => {
@@ -189,8 +184,8 @@ describe('Hero', () => {
   });
 
   it('renders portrait and pitch together', () => {
-    render(<Hero />);
-    expect(screen.getByText('AVAILABLE')).toBeInTheDocument();
+    const { container } = render(<Hero />);
+    expect(container.querySelector('.stamp-spin')).toBeInTheDocument();
     expect(screen.getByText('Alexzandra')).toBeInTheDocument();
   });
 });

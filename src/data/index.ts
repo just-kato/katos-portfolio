@@ -17,7 +17,7 @@ export const FEATURED: FeaturedProject = {
   description:
     'A booking and intake site for a private therapy practice. I built the entire full stack and was the client\'s sole point of contact, turning a brand-new idea into a calm, working product.',
   image: toastedsesametherapyImg,
-  imageBg: '#ded8cc',
+  imageBg: T.imageBgWarm,
   href: 'https://toastedsesametherapy.com',
 };
 
@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
     description:
       'A playful Pomodoro focus timer. Custom presets, streaks that survive a refresh, sound cues.',
     image: mochiTimerImg,
-    imageBg: '#FCFBE8',
+    imageBg: T.imageBgLight,
     imagePosition: 'top',
   },
   {

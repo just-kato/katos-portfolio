@@ -12,7 +12,7 @@ export function Hero() {
           padding: 'clamp(40px,6vw,72px) clamp(18px,5vw,48px) clamp(48px,7vw,88px)',
           display: 'flex',
           flexWrap: 'wrap',
-          alignItems: 'center',
+          alignItems: 'flex-start',
           gap: 'clamp(36px,6vw,72px)',
         }}
       >

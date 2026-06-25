@@ -24,4 +24,8 @@ export const T = {
   mutedLight:      '#ccc5b8',
   errorRed:        '#cc0000',
   highlightYellow: '#FFE44D',
+  badgePurple:     '#b08ef0',
+  badgeOffWhite:   '#f5f0e8',
+  imageBgWarm:     '#ded8cc',
+  imageBgLight:    '#FCFBE8',
 } as const;
