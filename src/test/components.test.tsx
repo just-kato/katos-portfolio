@@ -480,9 +480,47 @@ describe('Contact', () => {
 
 // ── ContactForm ────────────────────────────────────────────────────────────────
 
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
 import { ContactForm } from '../components/Contact/ContactForm';
 
 describe('ContactForm', () => {
+  it('index.html contains Netlify Forms static fallback', () => {
+    const html = readFileSync(resolve(__dirname, '../../index.html'), 'utf-8');
+    expect(html).toContain('name="contact"');
+    expect(html).toMatch(/netlify[\s>]/);
+    expect(html).toContain('netlify-honeypot="bot-field"');
+  });
+
+  it('form element has correct Netlify attributes', () => {
+    const { container } = render(<ContactForm />);
+    const form = container.querySelector('form')!;
+    expect(form).toHaveAttribute('name', 'contact');
+    expect(form).toHaveAttribute('data-netlify', 'true');
+    expect(form).toHaveAttribute('data-netlify-honeypot', 'bot-field');
+    expect(form.querySelector('input[name="form-name"]')).toHaveAttribute('value', 'contact');
+  });
+
+  it('POSTs to / with correct Netlify payload', async () => {
+    const mockFetch = vi.fn().mockResolvedValue({ ok: true });
+    global.fetch = mockFetch;
+    render(<ContactForm />);
+    fireEvent.change(screen.getByPlaceholderText('Jane Doe'), { target: { name: 'name', value: 'Test User' } });
+    fireEvent.change(screen.getByPlaceholderText('jane@company.com'), { target: { name: 'email', value: 'test@test.com' } });
+    fireEvent.change(screen.getByPlaceholderText('Tell me about the role…'), { target: { name: 'message', value: 'Hello' } });
+    fireEvent.click(screen.getByText('SEND →'));
+    await waitFor(() => expect(mockFetch).toHaveBeenCalled());
+    const [url, options] = mockFetch.mock.calls[0];
+    expect(url).toBe('/');
+    expect(options.method).toBe('POST');
+    expect(options.headers['Content-Type']).toBe('application/x-www-form-urlencoded');
+    const body = new URLSearchParams(options.body as string);
+    expect(body.get('form-name')).toBe('contact');
+    expect(body.get('name')).toBe('Test User');
+    expect(body.get('email')).toBe('test@test.com');
+    expect(body.get('message')).toBe('Hello');
+  });
+
   it('renders NAME, EMAIL, MESSAGE fields', () => {
     render(<ContactForm />);
     expect(screen.getByPlaceholderText('Jane Doe')).toBeInTheDocument();
