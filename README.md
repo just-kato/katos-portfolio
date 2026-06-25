@@ -1,66 +1,47 @@
-# 🎮 Kato's Retro Portfolio 🎨
+# Alexzandra's Portfolio
 
-Welcome to **Kato's Portfolio** – a retro-styled web application built with **React** and **Chakra UI**! This project showcases my work, services, and passion for 8-bit games 🕹️, all wrapped in a pixel-perfect design that throws back to the old-school gaming vibes.
+A neobrutalist real estate one-pager built with **React**, **Vite**, and **TypeScript**. Deployed on Netlify.
 
-## 🚀 Project Overview
+## Stack
 
-This project was created with **React** and styled using **Chakra UI**. It features draggable windows, inspired by the retro 90s desktop experience, and interactive elements like a **Snake Game** 🐍! The interface brings out a vintage, yet modern aesthetic for my portfolio.
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS (base reset only)
+- Netlify Forms (contact form)
+- Vitest + Testing Library
 
-## 🌟 Features
-- **Responsive Design** 📱: Works smoothly on both desktop and mobile devices.
-- **Draggable Windows** 💻: Each window (Portfolio, Services, Contact, etc.) can be moved around the screen.
-- **Snake Game** 🐍: Take a break and play the classic Snake game right in the portfolio!
-- **Cool Animations** ✨: Smooth animations and transitions to enhance the retro gaming feel.
-- **Z-Index Management** 🔄: Custom hook to manage the layering of windows.
-- **Shut Down** 🔌: Refresh the page with a 'Shut Down' menu item.
+## Project Structure
 
-## 📂 Project Structure
 ```
 /src
-  ├── /assets          # Images and icons
-  ├── /components      # React components (Windows, Menu, Icon Buttons)
-  ├── /hooks           # Custom hooks (useZIndexManager)
-  ├── App.js           # Main app entry point
-  ├── index.js         # React DOM rendering
-  ├── theme.js         # Custom Chakra UI theme
+  ├── /assets        # Images, icons, SVGs
+  ├── /components    # Section components (Hero, About, Work, Contact, etc.)
+  ├── /data          # Static content (projects, testimonials, stats)
+  ├── /test          # Vitest component tests
+  ├── tokens.ts      # Design system color tokens
+  └── index.css      # Global styles, animations, utility classes
+/public
+  ├── alexzandra_hernandez_resume.pdf
+  └── index.html     # Netlify Forms static fallback
 ```
 
-## 🛠️ Technologies
-- **React** ⚛️
-- **Chakra UI** 🌈
-- **React Icons** 🎨
-- **React RND** 📦
-- **Lottie Animations** 🎥
+## Setup
 
-## 📸 Screenshots
+```bash
+git clone https://github.com/just-kato/alexzandras-portfolio.git
+cd alexzandras-portfolio
+npm install
+npm run dev
+```
 
-### Desktop View
-![Desktop Screenshot](./public/desktopscreenshot.png)
+## Commands
 
-### Mobile View
-![Mobile Screenshot](./public/mobilescreenshot.png)
+```bash
+npm run dev      # Start dev server
+npm run build    # Type-check + production build
+npm run test     # Run component tests
+```
 
-## 🎮 Play Snake
-Click the **Snakey** icon in the menu to open a window and start playing the Snake game right in your browser!
+## Deployment
 
-## 🛠️ Setup & Installation
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/katos-portfolio.git
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-
-## 📜 License
-This project is licensed under the MIT License.
-
----
-
-Let me know if you'd like to adjust any sections or include more specific details!
+Deployed via Netlify. Push to `main` triggers an automatic build. The contact form is handled by Netlify Forms — no backend required.

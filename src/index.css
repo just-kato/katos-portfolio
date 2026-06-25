@@ -1,14 +1,152 @@
-body {
-  margin: 0;
-  font-family: "Press Start 2P", system-ui;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image: url('%PUBLIC_URL%/portfolio-logo.png');
-  z-index: -1;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  ::selection { background: #FDFD96; }
+
+  body {
+    margin: 0;
+    background: #F2EEE4;
+    font-family: 'Archivo', sans-serif;
+    color: #161310;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  @keyframes ahpulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.35; }
+  }
+
+  /* Available dot pulse — killed on prefers-reduced-motion */
+  .available-dot {
+    animation: ahpulse 1.4s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .available-dot { animation: none; }
+  }
 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  /* ── Hover-press states (can't be done with inline styles) ── */
+
+  /* HowIHelp cards, project grid cards */
+  .hover-press {
+    transition: transform .12s, box-shadow .12s;
+  }
+  .hover-press:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0 #161310;
+  }
+
+  /* Featured project card */
+  .hover-press-featured {
+    transition: transform .12s, box-shadow .12s;
+  }
+  .hover-press-featured:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 5px 5px 0 #161310;
+  }
+
+  /* "Get in touch" CTA — ink fill, lavender shadow */
+  .cta-ink {
+    transition: transform .12s, box-shadow .12s;
+  }
+  .cta-ink:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 #C4A1FF;
+  }
+
+  /* "Download résumé" CTA — cream fill, ink shadow */
+  .cta-cream {
+    transition: transform .12s, box-shadow .12s;
+  }
+  .cta-cream:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 #161310;
+  }
+
+  /* SEND button — pink shadow */
+  .btn-send {
+    transition: transform .12s, box-shadow .12s;
+  }
+  .btn-send:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #FFB2EF;
+  }
+
+  /* TopBar résumé button */
+  .btn-resume {
+    transition: transform .12s, box-shadow .12s;
+  }
+  .btn-resume:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #C4A1FF;
+  }
+
+  /* Hero "clients" SVG marker-highlight sweep */
+  @keyframes draw-highlight {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes draw-underline {
+    to { stroke-dashoffset: 0; }
+  }
+  .clients-highlight {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: draw-highlight 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+  }
+  .clients-underline {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: draw-underline 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1.5s forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .clients-highlight { animation: none; stroke-dashoffset: 0; }
+    .clients-underline { animation: none; stroke-dashoffset: 0; }
+  }
+
+  /* Spinning AVAILABLE stamp */
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  .stamp-spin {
+    animation: spin 9s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stamp-spin { animation: none !important; }
+  }
+
+  /* Hero portrait floating badge pop-in
+     Uses standalone `translate` + `scale` (CSS Transforms L2) so they don't
+     collide with inline transform: rotate() / translateY() on the same element */
+  @keyframes badge-pop {
+    from { opacity: 0; translate: 0 12px; scale: 0.8; }
+    to   { opacity: 1; translate: none; scale: 1; }
+  }
+  .badge-pop {
+    animation: badge-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .badge-pop { animation: none !important; opacity: 1; translate: none; scale: 1; }
+  }
+
+  /* ── Focus rings ── */
+  .form-input:focus {
+    outline: none;
+    box-shadow: 3px 3px 0 #C4A1FF;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #C4A1FF;
+    outline-offset: 2px;
+  }
 }
