@@ -5,8 +5,8 @@ import linkedinImg from '../../assets/linkedin.png';
 import downloadImg from '../../assets/download.png';
 
 const OPEN_TO = [
-  { label: 'Real Estate', bg: T.mint },
-  { label: 'Finance', bg: T.butter },
+  { label: 'Mortgage', bg: T.mint },
+  { label: 'Loan Origination', bg: T.butter },
   { label: 'Client Services', bg: T.cream },
 ];
 
@@ -48,7 +48,9 @@ export function Contact() {
                 color: T.darkPurple,
               }}
             >
-              Looking for customer-facing work in real estate, leasing, mortgage, or banking. Tell me about the role and I'll reply within a day.
+              Looking for a loan officer role in mortgage lending. Tell me about the position and I'll reply within a day.
+
+
             </p>
 
             <div style={{ marginTop: 26 }}>

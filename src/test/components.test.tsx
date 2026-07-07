@@ -488,7 +488,7 @@ describe('ContactForm', () => {
   it('index.html contains Netlify Forms static fallback', () => {
     const html = readFileSync(resolve(__dirname, '../../index.html'), 'utf-8');
     expect(html).toContain('name="contact"');
-    expect(html).toMatch(/netlify[\s>]/);
+    expect(html).toContain('data-netlify="true"');
     expect(html).toContain('netlify-honeypot="bot-field"');
   });
 

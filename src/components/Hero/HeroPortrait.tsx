@@ -137,7 +137,7 @@ function HeroBadges() {
           whiteSpace: 'nowrap',
         }}
       >
-        GSU&nbsp;'29
+        Mortgage Lending
       </span>
 
       {/* 4. Atlanta, GA — pill, off-white, pin icon, bottom-right, +2deg */}
