@@ -59,7 +59,8 @@ export function Footer() {
                 textTransform: 'uppercase',
               }}
             >
-              Atlanta, GA · Real Estate & Finance
+                Atlanta, GA · Mortgage Lending
+
             </div>
             <p
               style={{
@@ -70,7 +71,7 @@ export function Footer() {
                 maxWidth: 360,
               }}
             >
-              Open to customer-facing roles in real estate, leasing, mortgage, and banking.
+              Open to loan officer roles in mortgage lending.
             </p>
           </div>
 

@@ -39,8 +39,8 @@ export function TrackRecord() {
             lineHeight: 1.6,
           }}
         >
-          From my product career, the same instincts that keep a customer happy or a resident
-          renewing. Numbers animate as you scroll.
+          From my product career, the same instincts that keep a customer happy.
+          
         </p>
         <div
           style={{

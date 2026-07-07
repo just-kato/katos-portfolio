@@ -35,9 +35,9 @@ export function About() {
                 color: T.body,
               }}
             >
-              Now I'm bringing both into real estate. I'm pursuing my B.S. in Real Estate at Georgia
-              State while looking for customer-facing work where being genuinely good with people
-              matters.
+              Now I'm bringing both into mortgage lending, where reading a client's numbers and reading the person across the table are the whole job. I'm pursuing my NMLS license and looking for a loan origination role where being genuinely good with people matters.
+
+
             </p>
           </div>
 
@@ -67,10 +67,10 @@ export function About() {
                   color: T.mutedBrown,
                 }}
               >
-                EDUCATION
+                OPEN TO
               </div>
               <div style={{ fontWeight: 800, fontSize: 18, marginTop: 7, lineHeight: 1.25 }}>
-                B.S. Real Estate
+                Mortgage Lending
               </div>
               <div
                 style={{
@@ -81,7 +81,9 @@ export function About() {
                   marginTop: 3,
                 }}
               >
-                Georgia State · '29
+                NMLS in progress
+
+
               </div>
             </div>
 
